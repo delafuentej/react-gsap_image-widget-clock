@@ -6,12 +6,12 @@ import WidgetSpinner from "./WidgetSpinner";
 import { widgets } from "../constants";
 
 const WidgetContainer = () => {
-  const [index, setIndex] = useState(0);
+  const [currentWidget, setCurrentWidget] = useState(widgets[0]);
   return (
     <section className="widgets">
-      <WidgetPreview src={widgets[index].src} />
-      <WidgetTitle title={widgets[index].title} />
-      <WidgetSpinner onSegmentChange={setIndex} />
+      <WidgetPreview activeWidget={currentWidget} />
+      <WidgetTitle currentWidget={currentWidget} />
+      <WidgetSpinner widgets={widgets} onSegmentChange={setCurrentWidget} />
     </section>
   );
 };
