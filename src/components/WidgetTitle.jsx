@@ -1,7 +1,7 @@
 import React from "react";
 
-const WidgetTitle = () => {
-  return <div>WidgetTitle</div>;
+const WidgetTitle = ({ title }) => {
+  return <div className="widget-title">{title}</div>;
 };
 
 export default WidgetTitle;

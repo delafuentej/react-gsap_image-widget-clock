@@ -1,7 +1,8 @@
 import React from "react";
+import { WidgetContainer } from "./components";
 
 const App = () => {
-  return <div>App</div>;
+  return <WidgetContainer />;
 };
 
 export default App;
