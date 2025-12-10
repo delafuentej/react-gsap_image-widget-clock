@@ -85,7 +85,6 @@ img {
 
 #widget-indicator {
   stroke: var(--red);
-  stroke-width: 3;
-
+  stroke-width: 5;
   stroke-linecap: round;
 }
