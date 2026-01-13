@@ -25,13 +25,13 @@ const Segment = ({
   const largeArcFlag = anglePerSegment > 180 ? 1 : 0;
 
   const pathData = `
-    M ${x1} ${y1}
-    L ${x2} ${y2}
-    A ${outerRadius} ${outerRadius} 0 ${largeArcFlag} 1 ${x3} ${y3}
-    L ${x4} ${y4}
-    A ${innerRadius} ${innerRadius} 0 ${largeArcFlag} 0 ${x1} ${y1}
-    Z
-  `;
+      M ${x1} ${y1}
+      L ${x2} ${y2}
+      A ${outerRadius} ${outerRadius} 0 ${largeArcFlag} 1 ${x3} ${y3}
+      L ${x4} ${y4}
+      A ${innerRadius} ${innerRadius} 0 ${largeArcFlag} 0 ${x1} ${y1}
+      Z
+    `;
 
   const clipId = `clip-${index}`;
   // Calcular posición y tamaño de la imagen dentro del segmento

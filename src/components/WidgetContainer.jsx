@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import WidgetPreview from "./WidgetPreview";
 import WidgetTitle from "./WidgetTitle";
 import WidgetSpinner from "./WidgetSpinner";
