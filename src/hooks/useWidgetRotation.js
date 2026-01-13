@@ -24,6 +24,7 @@ export default function useWidgetRotation(widgets = [], onSegmentChange) {
       deltaTime = Math.min(deltaTime, 0.1);
 
       setRotation((prev) => {
+        // Sentido horario: rotación positiva (hacia la derecha)
         const newTargetIndicator = prev.targetIndicator + 18 * deltaTime;
         const newTargetSpinner = prev.targetSpinner - 18 * 0.25 * deltaTime;
 
@@ -34,6 +35,7 @@ export default function useWidgetRotation(widgets = [], onSegmentChange) {
         );
         const currentSpinner = lerp(prev.currentSpinner, newTargetSpinner, 0.1);
 
+        // Calcular el segmento activo basado en la rotación relativa
         const relativeRotation =
           (((currentIndicator - currentSpinner) % 360) + 360) % 360;
         const segmentIndex =
@@ -58,7 +60,8 @@ export default function useWidgetRotation(widgets = [], onSegmentChange) {
       requestAnimationFrame(animate);
     };
 
-    animate();
+    const animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
   }, [widgets]);
 
   useEffect(() => {
